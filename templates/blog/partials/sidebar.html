@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        aside{
+            position: absolute;
+            left: -280px;
+            top: 0;
+        }
+        .popular_articles {
+            border: 1px solid #bfbfbf;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: -5px 5px #d5d5d5;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="popular_articles">
+        <h2 class="h4">{{title}}</h2>
+        <hr>
+        {% for a in articles %}
+            <div>
+                <a href="{% url 'blog:detail' a.slug %}">
+                    {{a.title}}
+                </a>
+            </div>
+        {% endfor %}
+    </div>    
+</body>
+</html>

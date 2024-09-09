@@ -1,0 +1,14 @@
+{% extends "star_ratings/widget_base.html" %}
+{% block rating_detail %}
+<br>
+    {% if not user.is_authenticated %}
+        <div><small class="text-black">
+            برای رای دادن باید 
+            <a class="alert-blue" href="{% url 'login' %}">وارد</a> شوید.
+        </small></div>
+    {% else %}
+        {% comment %} Hi  {% endcomment %}
+        {% comment %} user.username {% endcomment %}
+    {% endif %}
+
+{% endblock %}
