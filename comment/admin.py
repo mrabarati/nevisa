@@ -54,10 +54,16 @@ class BlockedUserModelAdmin(admin.ModelAdmin):
 
 
 class BlockedUserHistoryModelAdmin(admin.ModelAdmin):
-    list_display = ('blocked_user', 'blocker', 'reason', 'state', 'date')
+    list_display = ('blocked_user', 'blocker', 'reason', 'state', 'jpublish')
     search_fields = (
         'blocked_user__user__username', 'blocked_user__email', 'blocker__username', 'blocker__email', 'state',  'date'
     )
+
+    def jpublish(self, obj):
+        from extentions.utils import jalali_converter
+        return jalali_converter(obj.date)
+
+    jpublish.short_description = 'Blocked Date'
 
 
 admin.site.register(Comment, CommentModelAdmin)

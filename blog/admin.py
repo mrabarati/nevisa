@@ -3,7 +3,7 @@ from .models import Article, Category, IpAddress
 
 
 #Change Admin Brand name
-admin.site.site_header = 'پنل مدیریت وبلاگ جنگویی '
+admin.site.site_header = 'پنل مدیریت نویسا'
 
 #set the article author to ali
 def chnage_author(modeladmin, request, queryset):
@@ -114,3 +114,5 @@ class BookAdmin(admin.ModelAdmin):
 
 #deletث action from admin panel
 admin.site.disable_action('delete_selected')
+admin.site.site_title = 'مدیریت نویسا'
+admin.site.index_title = 'مدیریت نویسا'
